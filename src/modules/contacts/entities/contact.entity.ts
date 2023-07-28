@@ -3,6 +3,6 @@ export class Contact {
   fullName: string;
   email: string;
   phone: string;
-  registrationDate: Date;
+  registrationDate: Date | null | undefined;
   clientId: number;
 }

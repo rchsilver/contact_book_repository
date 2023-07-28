@@ -1,6 +1,8 @@
+import { Contact } from '@prisma/client';
 import { hashSync } from 'bcryptjs';
 import { Transform } from 'class-transformer';
 import {
+  IsArray,
   IsDate,
   IsEmail,
   IsNotEmpty,

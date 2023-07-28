@@ -17,18 +17,34 @@ export class ContactsPrismaRepository implements ContactRepository {
       data: { ...contact },
     });
     return newContact;
-    // return plainToInstance(Client, newClient);
   }
 
   async findAll(): Promise<Contact[]> {
-    const users = await this.prisma.contact.findMany();
-    return users;
+    const contacts = await this.prisma.contact.findMany();
+
+    return contacts;
   }
 
   async findOne(id: number): Promise<Contact> {
-    const user = await this.prisma.contact.findUnique({
+    const contact = await this.prisma.contact.findUnique({
       where: { id },
     });
-    return user;
+
+    return contact;
+  }
+
+  async update(id: number, data: CreateContactDto): Promise<Contact> {
+    const contact = await this.prisma.contact.update({
+      where: { id },
+      data: { ...data },
+    });
+
+    return contact;
+  }
+
+  async delete(id: number): Promise<void> {
+    await this.prisma.contact.delete({
+      where: { id },
+    });
   }
 }

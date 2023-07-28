@@ -14,7 +14,8 @@ export class ClientPrismaRepository implements ClientRepository {
     Object.assign(client, {
       ...data,
     });
-    await this.findByEmail(data.email);
+
+    await this.verifyEmail(data.email);
     const newClient = await this.prisma.client.create({
       data: { ...client },
     });
@@ -23,7 +24,12 @@ export class ClientPrismaRepository implements ClientRepository {
   }
 
   async findAll(): Promise<Client[]> {
-    const users = await this.prisma.client.findMany();
+    const users = await this.prisma.client.findMany({
+      include: {
+        Contact: true,
+      },
+    });
+
     return plainToInstance(Client, users);
   }
 
@@ -34,11 +40,17 @@ export class ClientPrismaRepository implements ClientRepository {
     return plainToInstance(Client, user);
   }
 
+  async verifyEmail(email: string): Promise<Client> {
+    const user = await this.findByEmail(email);
+    if (user) throw new ConflictException('Email already exists!');
+
+    return user;
+  }
+
   async findByEmail(email: string): Promise<Client> {
     const user = await this.prisma.client.findUnique({
       where: { email },
     });
-    if (user) throw new ConflictException('Email already exists!');
 
     return user;
   }

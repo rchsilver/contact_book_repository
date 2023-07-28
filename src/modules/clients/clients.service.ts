@@ -21,6 +21,12 @@ export class ClientsService {
     return client;
   }
 
+  async findByEmail(email: string) {
+    const client = await this.clientsRepository.findByEmail(email);
+    if (!client) throw new NotFoundException('User not found.');
+    return client;
+  }
+
   async update(id: number, updateClientDto: UpdateClientDto) {
     const findClient = await this.clientsRepository.findOne(id);
 
