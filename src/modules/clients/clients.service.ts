@@ -37,5 +37,7 @@ export class ClientsService {
     if (!findUser) {
       throw new NotFoundException('User Not found');
     }
+
+    return this.clientsRepository.delete(id);
   }
 }

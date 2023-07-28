@@ -4,6 +4,7 @@ import {
   IsDate,
   IsEmail,
   IsNotEmpty,
+  IsOptional,
   IsString,
   MinLength,
 } from 'class-validator';
@@ -29,5 +30,7 @@ export class CreateClientDto {
   password: string;
 
   @IsString()
+  @IsDate()
+  @IsOptional()
   registrationDate: string | Date;
 }

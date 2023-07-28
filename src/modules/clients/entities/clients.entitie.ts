@@ -6,7 +6,7 @@ export class Client {
   fullName: string;
   email: string;
   phone: string;
-  registrationDate: string | Date;
+  registrationDate: string | Date | null | undefined;
   @Exclude()
   password: string;
 
