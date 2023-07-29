@@ -7,6 +7,7 @@ import {
   Patch,
   Post,
   UseGuards,
+  Request,
 } from '@nestjs/common';
 import { ClientsService } from './clients.service';
 import { CreateClientDto } from './dtos/create-client.dto';
@@ -18,7 +19,6 @@ export class ClientsControllers {
   constructor(private clientsService: ClientsService) {}
 
   @Post()
-  @UseGuards(JwtAuthGuard)
   create(@Body() data: CreateClientDto) {
     return this.clientsService.create(data);
   }

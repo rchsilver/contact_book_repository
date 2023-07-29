@@ -1,10 +1,4 @@
-import {
-  IsDate,
-  IsEmail,
-  IsNumber,
-  IsOptional,
-  IsString,
-} from 'class-validator';
+import { IsDate, IsEmail, IsOptional, IsString } from 'class-validator';
 
 export class CreateContactDto {
   readonly id: number;
@@ -23,6 +17,5 @@ export class CreateContactDto {
   @IsOptional()
   registrationDate: string | Date | null | undefined;
 
-  @IsNumber()
-  clientId: number;
+  readonly clientId: number;
 }
