@@ -34,6 +34,14 @@ export class ContactsPrismaRepository implements ContactRepository {
     return contact;
   }
 
+  async findByClientId(clientId: number): Promise<Contact[]> {
+    const contacts = await this.prisma.contact.findMany({
+      where: { clientId },
+    });
+
+    return contacts;
+  }
+
   async update(id: number, data: CreateContactDto): Promise<Contact> {
     const contact = await this.prisma.contact.update({
       where: { id },

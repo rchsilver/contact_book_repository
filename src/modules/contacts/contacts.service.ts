@@ -17,8 +17,14 @@ export class ContactsService {
 
   async findOne(id: number) {
     const contact = await this.contactRepository.findOne(id);
-    if (!contact) throw new NotFoundException('User not found.');
+    if (!contact) throw new NotFoundException('Contact not found.');
     return contact;
+  }
+
+  async findByClientId(clientId: number) {
+    const contacts = await this.contactRepository.findByClientId(clientId);
+    if (!contacts) throw new NotFoundException('Contacts not found.');
+    return contacts;
   }
 
   async update(id: number, updateContactDto: UpdateContactDto) {

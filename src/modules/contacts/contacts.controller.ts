@@ -37,6 +37,12 @@ export class ContactsController {
     return this.contactsService.findOne(+id);
   }
 
+  @Get('get/:clientId')
+  @UseGuards(JwtAuthGuard)
+  findByClientId(@Param('clientId') clientId: number) {
+    return this.contactsService.findByClientId(+clientId);
+  }
+
   @Patch(':id')
   @UseGuards(JwtAuthGuard)
   update(@Param('id') id: number, @Body() updateContactDto: UpdateContactDto) {
