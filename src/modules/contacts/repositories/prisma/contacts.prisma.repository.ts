@@ -9,7 +9,6 @@ export class ContactsPrismaRepository implements ContactRepository {
   constructor(private prisma: PrismaService) {}
 
   async create(data: CreateContactDto, clientId: number): Promise<Contact> {
-    console.log(clientId);
     const contact = new Contact();
     Object.assign(contact, {
       ...data,
