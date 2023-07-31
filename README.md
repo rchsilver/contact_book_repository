@@ -48,7 +48,7 @@ $ npm run start:prod
 ```bash
 
 # ("/api")
-$ [http://localhost:3000/api#/Clients/ClientsControllers_create](http://localhost:3000/api)
+$ http://localhost:3000/api
 
 
 ```
