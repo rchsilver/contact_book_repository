@@ -47,9 +47,7 @@ $ npm run start:prod
 
 ```bash
 
-# ("/api")
-$ http://localhost:3000/api
-
+http://localhost:3000/api
 
 ```
 
