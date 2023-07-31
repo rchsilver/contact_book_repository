@@ -43,6 +43,15 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
+## route to documentation
+
+```bash
+
+# ("/api")
+$ [http://localhost:3000/api#/Clients/ClientsControllers_create](http://localhost:3000/api)
+
+
+```
 
 ## Support
 
