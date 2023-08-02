@@ -26,26 +26,40 @@
 Está é uma API criada com objetivo de ser o Back-End de um projeto Full-Stack de gerenciamente de contatos.
 [Nest](https://github.com/nestjs/nest) 
 
-## Installation
+## Installation NPM
 
 ```bash
-$ npm install
+npm install
 ```
 
-## Running the app
+## Installation YARN
 
 ```bash
+yarn
+```
 
-$ npm run start:dev
+## run migration
 
+```bash
+npx prisma migrate dev
+```
+
+## Running the app NPM
+
+```bash
+npm run start:dev
+```
+
+## Running the app YARN
+
+```bash
+yarn start:dev
 ```
 
 ## route to documentation
 
 ```bash
-
 http://localhost:3000/api
-
 ```
 
 ## Support
