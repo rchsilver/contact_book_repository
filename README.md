@@ -26,51 +26,86 @@
 Está é uma API criada com objetivo de ser o Back-End de um projeto Full-Stack de gerenciamente de contatos.
 [Nest](https://github.com/nestjs/nest) 
 
-## Installation NPM
+## 🚀 Começando
+
+Essas instruções permitirão que você obtenha uma cópia do projeto em operação na sua máquina local para fins de desenvolvimento e teste.
+
+Consulte **[Implantação](#-implanta%C3%A7%C3%A3o)** para saber como implantar o projeto.
+
+### 📋 Pré-requisitos
+
+De que coisas você precisa para instalar o software e como instalá-lo?
+
+```
+- Editor de texto (IDE) preferencialmente VScode pois foi nele que a aplicação foi desenvolvida
+- Uma ferramenta de teste e depuração de APIs para testes (Opicional)
+```
+
+### 🔧 Instalação
+
+Uma série de exemplos passo-a-passo que informam o que você deve executar para ter um ambiente de desenvolvimento em execução.
+
+Clonar o Repositório :
+
+```
+- Clique no botão (<>code) e copie e chave SSH
+```
+
+Salvar uma copia do projeto em sua máquina:
+
+```
+- Abra o diretorio onde será salvo o projeto e abra o terminal nesse diretório
+- Rode o comando: git clone (chave SSH copiada)
+- Após isso você terá uma copia totalmente editavel de todo o projeto em sua maquina
+```
+
+## 📦 Implantação
+
+Manipulando o arquivo .env
+
+```
+- Crie um arquivo chamado .env na pasta raiz de contact_bookrepository
+- Dentro dele crie as variáveis de ambiente seguindo o padrão do arquivo .env.example
+- Configure suas variáveis de ambiente com suas credenciais do PostgresSQL e um novo banco de dados para estar utilizando no projeto.
+
+- ATENÇÃO: Para que o servidor funcione corretamente as credenciais do arquivo .env devem estar exatamente iguais as credenciais do seu banco de dados PostegresSQL e não se esqueça de salvar o arquivo 
+```
+
+## Para rodar o projeto localmente deve instalar as dependências usando Yarn ou NPM e rodar as migrações para gerar as tabelas.
+
+## Intalação com NPM
 
 ```bash
 npm install
 ```
 
-## Installation YARN
+## Intalação com YARN
 
 ```bash
 yarn
 ```
 
-## run migration
+## Para rodar as migrations
 
 ```bash
 npx prisma migrate dev
 ```
 
-## Running the app NPM
+## Para rodar a aplicação localmente com NPM
 
 ```bash
 npm run start:dev
 ```
 
-## Running the app YARN
+## Para rodar a aplicação localmente com YARN
 
 ```bash
 yarn start:dev
 ```
 
-## route to documentation
+## Para acessar a Documentação da API click no link a baixo(O servidor deve estar rodando localmente):
 
-```bash
-http://localhost:3000/api
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+[Link para Doc](http://localhost:3000/api)
 
 ## License
 
